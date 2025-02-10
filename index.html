@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DS計算機</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>DS計算機</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>メニュー</th>
+                <th>価格 (円)</th>
+                <th>個数</th>
+                <th>小計 (円)</th>
+            </tr>
+        </thead>
+        <tbody id="menu-body">
+            <tr>
+                <td>指名料</td>
+                <td class="price">5000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>同伴</td>
+                <td class="price">3000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>テーブルチャージ</td>
+                <td class="price">2000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>シャルドネ</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>ピーチ</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>レモン</td>
+                <td class="price">1500</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>淡麗</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>グラス</td>
+                <td class="price">500</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>お茶、紅茶系デキャンタ</td>
+                <td class="price">1500</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>カルピス、ネクターデキャンタ</td>
+                <td class="price">2000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>青汁</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>エナジー</td>
+                <td class="price">1500</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>鏡月</td>
+                <td class="price">4000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>生ビール</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>ハイボール</td>
+                <td class="price">1000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>カクテル</td>
+                <td class="price">2000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>クライナー</td>
+                <td class="price">2000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>テキーラ</td>
+                <td class="price">3000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>テキーラローズ</td>
+                <td class="price">2000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>１８００</td>
+                <td class="price">4000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+
+            </tr>
+            <tr>
+                <td>コカボム</td>
+                <td class="price">3000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>観覧車</td>
+                <td class="price">60000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            <tr>
+                <td>アスティ</td>
+                <td class="price">26000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>アスティS</td>
+                <td class="price">13000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJW</td>
+                <td class="price">50000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJB</td>
+                <td class="price">70000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJR</td>
+                <td class="price">100000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJG</td>
+                <td class="price">150000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJPB</td>
+                <td class="price">200000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJPR</td>
+                <td class="price">250000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>
+            </tr>
+            <tr>
+                <td>BJPG</td>
+                <td class="price">350000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>            </tr>
+            <tr>
+                <td>BJEX</td>
+                <td class="price">500000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>            </tr>
+            <tr>
+                <td>ピエール</td>
+                <td class="price">26000</td>
+                <td><input type="number" class="quantity" value="0" min="0" onchange="calculateTotal()"></td>
+                <td class="subtotal">0</td>            </tr>
+        </tbody>
+    </table>
+    <h3>合計: <span id="total-price">0</span> 円</h3>
+    <h3>税込 (1.35%): <span id="total-tax">0</span> 円</h3>
+
+    <script>
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('#menu-body tr').forEach(row => {
+                const price = parseInt(row.querySelector('.price').textContent);
+                const quantity = parseInt(row.querySelector('.quantity').value);
+                const subtotal = price * quantity;
+                row.querySelector('.subtotal').textContent = subtotal;
+                total += subtotal;
+            });
+            document.getElementById('total-price').textContent = total;
+            document.getElementById('total-tax').textContent = Math.round(total * 1.35);
+        }
+    </script>
+</body>
+</html>
+cd path/to/index.html  # フォルダに移動
+git init  # ローカルリポジトリを作成
